@@ -19,15 +19,34 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-onyx/80 backdrop-blur-md border-b border-gold/30">
       <div className="container flex items-center justify-between py-4">
-        {/* Brand */}
-        <div className="flex items-center gap-2">
-          <FaCrown className="text-gold text-3xl" />
-          <span className="font-display text-2xl text-transparent bg-clip-text bg-goldgrad animate-shimmer">
-            RKM Attorneys
+        {/* Brand / Logo */}
+        <div className="flex items-center gap-2 relative">
+          <FaCrown className="text-gold text-3xl drop-shadow-[0_0_10px_rgba(198,161,91,0.7)]" />
+          <span className="relative inline-block">
+            {/* Base solid gold */}
+            <span className="font-display font-extrabold tracking-wide text-2xl text-gold drop-shadow-[0_0_12px_rgba(198,161,91,0.6)]">
+              RKM Attorneys
+            </span>
+            {/* Shimmer overlay */}
+            <span
+              className="absolute inset-0 font-display font-extrabold tracking-wide text-2xl
+                         text-transparent bg-clip-text bg-gradient-to-r from-gold via-white to-gold
+                         animate-shimmer opacity-80 pointer-events-none"
+              aria-hidden="true"
+            >
+              RKM Attorneys
+            </span>
+            {/* Neon underline with shimmer */}
+            <span
+              className="absolute left-0 -bottom-1 w-full h-0.5 rounded-full
+                         bg-gradient-to-r from-gold via-white to-gold
+                         shadow-[0_0_8px_rgba(198,161,91,0.7)]
+                         animate-shimmer"
+            />
           </span>
         </div>
 
-        {/* Links */}
+        {/* Navigation Links */}
         <ul className="flex gap-6">
           {navItems.map((item) => (
             <li key={item.href}>

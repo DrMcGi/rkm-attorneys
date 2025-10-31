@@ -1,71 +1,88 @@
 "use client";
 
-import { FaCrown, FaLinkedin, FaWhatsapp, FaEnvelope } from "react-icons/fa";
+import { FaWhatsapp, FaFacebookF, FaLinkedinIn, FaTwitter } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className="relative mt-24 bg-onyx border-t border-gold/20">
-      {/* Shimmer line */}
-      <div className="h-1 w-full bg-linear-to-r from-transparent via-gold to-transparent animate-pulse" />
-
-      <div className="container py-16 grid md:grid-cols-3 gap-12 text-sm text-ash relative z-10">
-        {/* Brand */}
+    <footer className="bg-onyx text-bone border-t border-gold/30 relative z-10">
+      <div className="container py-12 grid grid-cols-1 md:grid-cols-3 gap-10">
+        {/* Brand / About */}
         <div>
-          <div className="flex items-center gap-2">
-            <FaCrown className="text-gold text-2xl drop-shadow-[0_0_15px_rgba(255,215,0,0.8)]" />
-            <span className="font-display text-lg text-gold">RKM Attorneys</span>
-          </div>
-          <p className="mt-3">
-            Luxury‑grade counsel serving diverse client needs with expertise and professionalism.
+          <h3 className="relative inline-block font-display font-extrabold text-xl text-gold drop-shadow-[0_0_10px_rgba(198,161,91,0.7)]">
+            RKM Attorneys
+            <span
+              className="absolute left-0 -bottom-1 w-full h-0.5 bg-gold rounded-full
+                         shadow-[0_0_8px_rgba(198,161,91,0.7)] animate-pulse"
+            />
+          </h3>
+          <p className="mt-4 text-sm leading-relaxed text-bone/80 max-w-sm">
+            Providing luxury‑grade counsel in estate, litigation, labour, and RAF matters.
+            Our commitment is trust, transparency, and transformative outcomes.
           </p>
         </div>
 
-        {/* Contact */}
+        {/* Quick Links */}
         <div>
-          <h3 className="text-bone font-semibold">Contact</h3>
-          <p className="mt-2">
-            Email:{" "}
-            <a href="mailto:Info@rkmattorneysinc.co.za" className="hover:text-gold">
-              Info@rkmattorneysinc.co.za
-            </a>
-          </p>
-          <p className="mt-1">
-            Marshall Town Office, Khotso House, 7th floor, Johannesburg.
-          </p>
+          <h4 className="font-semibold text-gold mb-4 relative inline-block">
+            Quick Links
+            <span
+              className="absolute left-0 -bottom-1 w-full h-0.5 bg-gold rounded-full
+                         shadow-[0_0_6px_rgba(198,161,91,0.6)] animate-pulse"
+            />
+          </h4>
+          <ul className="space-y-2 text-sm">
+            <li><a href="#attorneys" className="hover:text-gold transition">Leadership</a></li>
+            <li><a href="#practice" className="hover:text-gold transition">Practice Areas</a></li>
+            <li><a href="#insights" className="hover:text-gold transition">Insights</a></li>
+            <li><a href="#visit" className="hover:text-gold transition">Visit Us</a></li>
+            <li><a href="#contact" className="hover:text-gold transition">Contact</a></li>
+          </ul>
         </div>
 
-        {/* Social */}
+        {/* Connect */}
         <div>
-          <h3 className="text-bone font-semibold">Connect</h3>
-          <div className="flex gap-4 mt-3">
+          <h4 className="font-semibold text-gold mb-4 relative inline-block">
+            Connect
+            <span
+              className="absolute left-0 -bottom-1 w-full h-0.5 bg-gold rounded-full
+                         shadow-[0_0_6px_rgba(198,161,91,0.6)] animate-pulse"
+            />
+          </h4>
+          <div className="flex gap-4">
             <a
-              href="https://www.linkedin.com/company/rkm-attorneys"
+              href="https://wa.me/27727183125?text=Hello%20RKM%20Attorneys%2C%20I%20would%20like%20to%20book%20a%20consultation."
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 rounded-full bg-glass text-gold shadow-[0_0_15px_rgba(255,215,0,0.4)] hover:shadow-[0_0_25px_rgba(255,215,0,0.9)] transition"
-            >
-              <FaLinkedin />
-            </a>
-            <a
-              href="https://wa.me/27720000000"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-3 rounded-full bg-glass text-gold shadow-[0_0_15px_rgba(255,215,0,0.4)] hover:shadow-[0_0_25px_rgba(255,215,0,0.9)] transition"
+              className="p-3 rounded-full bg-glass text-gold shadow-soft hover:shadow-glow transition"
             >
               <FaWhatsapp />
             </a>
             <a
-              href="mailto:Info@rkmattorneysinc.co.za"
-              className="p-3 rounded-full bg-glass text-gold shadow-[0_0_15px_rgba(255,215,0,0.4)] hover:shadow-[0_0_25px_rgba(255,215,0,0.9)] transition"
+              href="#"
+              className="p-3 rounded-full bg-glass text-gold shadow-soft hover:shadow-glow transition"
             >
-              <FaEnvelope />
+              <FaFacebookF />
+            </a>
+            <a
+              href="#"
+              className="p-3 rounded-full bg-glass text-gold shadow-soft hover:shadow-glow transition"
+            >
+              <FaLinkedinIn />
+            </a>
+            <a
+              href="#"
+              className="p-3 rounded-full bg-glass text-gold shadow-soft hover:shadow-glow transition"
+            >
+              <FaTwitter />
             </a>
           </div>
         </div>
       </div>
 
-      {/* Background glow */}
-      <div className="absolute inset-0 bg-linear-to-t from-gold/5 to-transparent pointer-events-none" />
+      {/* Bottom Bar */}
+      <div className="border-t border-gold/20 py-4 text-center text-xs text-bone/70">
+        © {new Date().getFullYear()} RKM Attorneys. All rights reserved.
+      </div>
     </footer>
   );
 }
