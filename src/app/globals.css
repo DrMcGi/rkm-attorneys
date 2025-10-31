@@ -1,26 +1,130 @@
+/* Tailwind entrypoint */
 @import "tailwindcss";
 
+/* --------------------------------
+   Brand variables (sync with theme)
+-----------------------------------*/
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Match these to your Tailwind theme colors */
+  --color-onyx: #0b0b0b;       /* onyx */
+  --color-bone: #eae6df;       /* bone */
+  --color-ash: #a0a0a0;        /* ash (text) */
+  --color-charcoal: #1a1a1a;   /* charcoal (surface) */
+  --color-gold: #ffd700;       /* gold */
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* --------------------------------
+   Base reset & typography
+-----------------------------------*/
+html, body {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-onyx);
+  color: var(--color-bone);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: var(--font-inter), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-fraunces), ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+/* --------------------------------
+   Container utility
+-----------------------------------*/
+.container {
+  width: 100%;
+  max-width: 80rem; /* 1280px ~ max-w-7xl */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;  /* px-4 */
+  padding-right: 1rem;
+}
+
+/* --------------------------------
+   Glassmorphism
+-----------------------------------*/
+.bg-glass {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 0.75rem;
+}
+
+/* --------------------------------
+   Ambient gold radial backdrop
+-----------------------------------*/
+.bg-goldradial {
+  background:
+    radial-gradient(1200px circle at 20% 0%, rgba(255, 215, 0, 0.06), transparent 40%),
+    radial-gradient(1000px circle at 80% 100%, rgba(255, 215, 0, 0.05), transparent 40%);
+}
+
+/* --------------------------------
+   Text shimmer animation
+-----------------------------------*/
+@keyframes textShimmer {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+.animate-textShimmer {
+  background-size: 200% auto;
+  animation: textShimmer 6s linear infinite;
+}
+
+/* --------------------------------
+   CTA background shimmer
+-----------------------------------*/
+@keyframes shimmer {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+/* --------------------------------
+   Noise overlay (luxury texture)
+-----------------------------------*/
+.bg-noise {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Crect width='1' height='1'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* --------------------------------
+   Scrollbar styling (desktop)
+-----------------------------------*/
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #111; /* onyx track */
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, var(--color-gold), #b8860b);
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #ffec8b, #daa520);
+}
+
+/* --------------------------------
+   Utility helpers (optional)
+-----------------------------------*/
+.text-ash {
+  color: var(--color-ash);
+}
+.bg-onyx {
+  background-color: var(--color-onyx);
+}
+.bg-charcoal {
+  background-color: var(--color-charcoal);
+}
+.text-bone {
+  color: var(--color-bone);
+}
+.text-gold {
+  color: var(--color-gold);
+}
+.bg-gold {
+  background-color: var(--color-gold);
 }
