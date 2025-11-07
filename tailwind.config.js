@@ -7,11 +7,13 @@ const config = {
   theme: {
     extend: {
       colors: {
-        onyx: "#0A0A0B",
-        charcoal: "#121316",
-        bone: "#F7F5F2",
-        gold: "#C6A15B",
-        ash: "#A7A7AA",
+        onyx: "#0b0b0b",
+        charcoal: "#1a1a1a",
+        bone: "#f8f3e9",
+        gold: "#c6a15b",
+        'gold-light': "#d4b878",
+        'gold-dark': "#97783c",
+        ash: "#b2a89f",
         glass: "rgba(255,255,255,0.04)"
       },
       fontFamily: {
