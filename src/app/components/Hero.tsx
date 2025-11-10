@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import Image from "next/image";
 
 export default function Hero() {
   const ref = useRef(null);
@@ -11,35 +12,34 @@ export default function Hero() {
   return (
     <section
       ref={ref}
-      className="relative h-screen flex items-center justify-center overflow-hidden"
+      className="relative flex items-center justify-center h-screen overflow-hidden"
     >
-      {/* Parallax background */}
-      <motion.div
-        style={{ y }}
-        className="absolute inset-0 bg-[url('/images/hero-bg.jpg')] bg-cover bg-center"
-      />
+      {/* Parallax background with alt text */}
+      <motion.div style={{ y }} className="absolute inset-0">
+        <Image
+          src="/images/hero-bg.jpg"
+          alt="RKM Attorneys office reception in Johannesburg"
+          fill
+          priority
+          className="object-cover"
+        />
+      </motion.div>
       <div className="absolute inset-0 bg-black/60" />
 
-      {/* Content */}
-      <div className="relative z-10 text-center px-6">
+      <div className="relative z-10 px-6 text-center">
         <span className="relative inline-block">
-          {/* Base solid gold */}
           <h1
             className="font-display font-extrabold tracking-wide text-6xl md:text-7xl lg:text-8xl
                        text-gold drop-shadow-[0_0_25px_rgba(198,161,91,0.9)]"
           >
             RKM Attorneys
           </h1>
-          {/* Shimmer overlay */}
           <h1
-            className="absolute inset-0 font-display font-extrabold tracking-wide text-6xl md:text-7xl lg:text-8xl
-                       text-transparent bg-clip-text bg-linear-to-r from-gold via-white to-gold
-                       animate-shimmer opacity-80 pointer-events-none"
+            className="absolute inset-0 text-6xl font-extrabold tracking-wide text-transparent pointer-events-none font-display md:text-7xl lg:text-8xl bg-clip-text bg-linear-to-r from-gold via-white to-gold animate-shimmer opacity-80"
             aria-hidden="true"
           >
             RKM Attorneys
           </h1>
-          {/* Neon underline with shimmer */}
           <span
             className="absolute left-0 -bottom-2 w-full h-1 rounded-full
                        bg-linear-to-r from-gold via-white to-gold
@@ -48,18 +48,17 @@ export default function Hero() {
           />
         </span>
 
-        <p className="mt-6 text-xl md:text-2xl text-bone max-w-2xl mx-auto">
-          Luxury‑grade counsel in estate, litigation, labour & RAF matters
+        <p className="max-w-2xl mx-auto mt-6 text-xl md:text-2xl text-bone">
+          Luxury‑grade counsel in estate administration, litigation, labour law & RAF matters in Johannesburg and Gauteng
         </p>
 
         <a
           href="https://wa.me/27727183125?text=Hello%20RKM%20Attorneys%2C%20I%20would%20like%20to%20book%20a%20consultation."
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-10 inline-block px-10 py-4 rounded-full bg-gold text-onyx font-semibold
-                     shadow-soft hover:shadow-glow hover:scale-110 transition"
+          className="inline-block px-8 py-4 mt-8 font-semibold transition rounded-md bg-gold text-onyx shadow-soft hover:shadow-glow"
         >
-          Book a Consultation
+          Book Consultation on WhatsApp
         </a>
       </div>
     </section>

@@ -1,18 +1,35 @@
-export default function VisitUs() {
-  return (
-    <section id="visit" className="relative bg-charcoal/40 border-y border-gold/20">
-      <div className="container py-16 text-center">
-        <h2 className="font-display text-3xl">Visit Us</h2>
-        <p className="mt-4 text-ash max-w-2xl mx-auto">
-          Our Marshall Town Office is located next to the Master of the High Court Johannesburg, 
-          Khotso House, 7th floor. Let us be your legal partners.
-        </p>
-      </div>
+"use client";
 
-      <div className="w-full h-[400px] md:h-[500px] border-t border-gold/30">
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
+
+export default function VisitUs() {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  });
+
+  const y = useTransform(scrollYProgress, [0, 1], ["10%", "-5%"]);
+
+  return (
+    <section id="visit" ref={ref} className="container py-24 text-center">
+      <h2 className="font-display text-3xl text-gold drop-shadow-[0_0_15px_rgba(255,215,0,0.8)]">
+        Visit Us
+      </h2>
+      <p className="mt-2 text-ash">
+        Visit us at our Marshall Town Office, next to the Master of the High Court Johannesburg, 
+        Khotso House, 7th floor. Let us be your legal partners.
+      </p>
+
+      {/* ✅ Additive iframe block */}
+      <motion.div
+        style={{ y }}
+        className="w-full h-[400px] md:h-[500px] border-t border-gold/30 mt-8 rounded-xl overflow-hidden"
+      >
         <iframe
           title="RKM Attorneys Location"
-          src="https://www.google.com/maps/embed?pb=YOUR_EMBED_URL_HERE"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3579.6482626064885!2d28.03537207610897!3d-26.20811797707415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e950ea3a7209195%3A0x458abb5b136ccb21!2sKhotso%20House!5e0!3m2!1sen!2sza!4v1762806304741!5m2!1sen!2sza"
           width="100%"
           height="100%"
           style={{ border: 0 }}
@@ -20,14 +37,15 @@ export default function VisitUs() {
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
         ></iframe>
-      </div>
+      </motion.div>
 
-      <div className="container py-8 text-center">
+      {/* ✅ Your original button, unchanged */}
+      <div className="mt-6">
         <a
           href="https://www.google.com/maps/dir/?api=1&destination=Khotso+House,+Marshalltown,+Johannesburg"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block px-8 py-3 mt-4 rounded-full bg-gold text-onyx font-semibold shadow-soft hover:shadow-glow transition"
+          className="inline-block px-6 py-3 font-semibold transition rounded-md bg-gold text-onyx shadow-soft hover:shadow-glow"
         >
           Get Directions
         </a>

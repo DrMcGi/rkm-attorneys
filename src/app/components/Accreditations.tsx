@@ -11,7 +11,6 @@ export default function Accreditations() {
     offset: ["start end", "end start"]
   });
 
-  // Float badges slightly as you scroll
   const y = useTransform(scrollYProgress, [0, 1], ["10%", "-5%"]);
 
   const items = [
@@ -23,9 +22,9 @@ export default function Accreditations() {
   return (
     <section id="accreditations" ref={ref} className="container py-24 text-center">
       <h2 className="font-display text-3xl text-bone drop-shadow-[0_0_15px_rgba(255,215,0,0.6)]">
-        Accreditations & Memberships
+        Accreditations & Memberships – Legal Associations in South Africa
       </h2>
-      <motion.div style={{ y }} className="mt-12 flex flex-wrap justify-center gap-12">
+      <motion.div style={{ y }} className="flex flex-wrap justify-center gap-12 mt-12">
         {items.map((i) => (
           <div
             key={i.label}
@@ -35,7 +34,7 @@ export default function Accreditations() {
                        hover:scale-105 transition"
           >
             {i.icon}
-            <span className="mt-2 text-ash text-sm">{i.label}</span>
+            <span className="mt-2 text-sm text-ash">{i.label}</span>
           </div>
         ))}
       </motion.div>

@@ -34,9 +34,9 @@ export default function PracticeGrid() {
   return (
     <section id="practice" ref={ref} className="container py-24">
       <h2 className="font-display text-3xl text-center text-bone drop-shadow-[0_0_15px_rgba(255,215,0,0.6)]">
-        Practice Areas
+        Practice Areas – Litigation, Labour, Estate, RAF, Criminal Law
       </h2>
-      <motion.div style={{ y }} className="mt-12 grid md:grid-cols-3 gap-8">
+      <motion.div style={{ y }} className="grid gap-8 mt-12 md:grid-cols-3">
         {areas.map((a) => (
           <div
             key={a.title}
@@ -48,8 +48,8 @@ export default function PracticeGrid() {
             <div className="flex justify-center mb-4 text-gold text-4xl drop-shadow-[0_0_15px_rgba(255,215,0,0.7)]">
               {a.icon}
             </div>
-            <h3 className="font-display text-xl text-bone">{a.title}</h3>
-            <p className="mt-2 text-ash text-sm">{a.desc}</p>
+            <h3 className="text-xl font-display text-bone">{a.title}</h3>
+            <p className="mt-2 text-sm text-ash">{a.desc}</p>
           </div>
         ))}
       </motion.div>

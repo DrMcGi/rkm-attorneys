@@ -37,18 +37,20 @@ export default function Home() {
         variants={fadeUp}
       >
         <h2 className="font-display text-3xl text-center text-gold drop-shadow-[0_0_20px_rgba(255,215,0,0.8)]">
-          Leadership
+          Leadership – Estate & Litigation Attorneys in Johannesburg
         </h2>
-        <div className="mt-12 grid md:grid-cols-2 gap-10">
+        <div className="grid gap-10 mt-12 md:grid-cols-2">
           <AttorneyCard
             name="Gomolemo Links"
             title="Director of Sesedi and Links Pty LTD • FISCA Member • Estate Administration Expert"
             bio="He spearheads our estate administration department, ensuring efficient and professional service for deceased estates."
+            imageSrc="/images/gomolemo.jpg"
           />
           <AttorneyCard
             name="Director, RKM Attorneys and Associates Incorporated"
             title="LLB, University of Limpopo (2019) • LEAD Polokwane • Articles at Popela Maake Attorneys • Former Master of the High Court (2 years)"
             bio="Specializes in estate matters and offers a broad range of legal services across litigation, labour, and RAF."
+            imageSrc="/images/director.jpg"
           />
         </div>
       </motion.section>
