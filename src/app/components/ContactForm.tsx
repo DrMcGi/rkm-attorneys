@@ -13,8 +13,8 @@ export default function ContactForm() {
   };
 
   return (
-    <section id="contact" className="container py-16">
-      <h2 className="font-display text-2xl">Contact</h2>
+    <div className="container py-16">
+      <h2 className="font-display text-2xl">Contact Our Attorneys in Johannesburg</h2>
       <div className="mt-6 grid md:grid-cols-2 gap-8">
         <div className="bg-glass border border-gold/20 rounded-xl p-6">
           <p className="text-ash">
@@ -25,11 +25,15 @@ export default function ContactForm() {
           </p>
           <p className="mt-2 text-ash">
             Visit us at our Marshall Town Office, next to the Master of the High Court Johannesburg, 
-            Khotso House, 7th floor. Let us be your legal partners.
+            Khotso House, 7th floor. We serve clients across Gauteng and Limpopo in estate, litigation, labour, and RAF matters.
           </p>
         </div>
 
-        <form onSubmit={onSubmit} className="bg-glass border border-gold/20 rounded-xl p-6">
+        <form
+          onSubmit={onSubmit}
+          className="bg-glass border border-gold/20 rounded-xl p-6"
+          aria-busy={status === "sending"}
+        >
           <div className="grid grid-cols-1 gap-4">
             <label className="text-sm">
               Full name
@@ -65,19 +69,25 @@ export default function ContactForm() {
               />
             </label>
             <button
+              type="submit"
               className="mt-2 px-5 py-3 bg-linear-to-r from-gold to-gold/80 text-onyx font-medium rounded-md shadow-soft hover:shadow-glow transition disabled:opacity-60"
               disabled={status !== "idle"}
+              aria-disabled={status !== "idle"}
             >
               {status === "idle" && "Request consultation"}
               {status === "sending" && "Sending..."}
               {status === "sent" && "Sent"}
             </button>
+            <div className="mt-2 text-sm text-gold" role="status" aria-live="polite">
+              {status === "sending" && "Sending your request…"}
+              {status === "sent" && "We have received your request."}
+            </div>
           </div>
-          <p className="mt-3 text-xs text-ash">
+          <p className="mt-3 text-xs text-ash" aria-live="polite">
             By submitting, you acknowledge this does not create an attorney–client relationship.
           </p>
         </form>
       </div>
-    </section>
+    </div>
   );
 }

@@ -1,11 +1,12 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { FaGavel, FaUniversity, FaCertificate } from "react-icons/fa";
 
 export default function Accreditations() {
   const ref = useRef(null);
+  const prefersReducedMotion = useReducedMotion();
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start end", "end start"]
@@ -24,7 +25,10 @@ export default function Accreditations() {
       <h2 className="font-display text-3xl text-bone drop-shadow-[0_0_15px_rgba(255,215,0,0.6)]">
         Accreditations & Memberships – Legal Associations in South Africa
       </h2>
-      <motion.div style={{ y }} className="flex flex-wrap justify-center gap-12 mt-12">
+      <motion.div
+        style={prefersReducedMotion ? undefined : { y }}
+        className="flex flex-wrap justify-center gap-12 mt-12"
+      >
         {items.map((i) => (
           <div
             key={i.label}

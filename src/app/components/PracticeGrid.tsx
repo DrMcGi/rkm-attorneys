@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import {
   FaGavel,
@@ -16,6 +16,7 @@ import {
 
 export default function PracticeGrid() {
   const ref = useRef(null);
+  const prefersReducedMotion = useReducedMotion();
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
   const y = useTransform(scrollYProgress, [0, 1], ["20%", "-10%"]);
 
@@ -36,7 +37,10 @@ export default function PracticeGrid() {
       <h2 className="font-display text-3xl text-center text-bone drop-shadow-[0_0_15px_rgba(255,215,0,0.6)]">
         Practice Areas – Litigation, Labour, Estate, RAF, Criminal Law
       </h2>
-      <motion.div style={{ y }} className="grid gap-8 mt-12 md:grid-cols-3">
+      <motion.div
+        style={prefersReducedMotion ? undefined : { y }}
+        className="grid gap-8 mt-12 md:grid-cols-3"
+      >
         {areas.map((a) => (
           <div
             key={a.title}

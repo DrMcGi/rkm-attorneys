@@ -30,7 +30,7 @@ export default function Navbar() {
             {/* Shimmer overlay */}
             <span
               className="absolute inset-0 font-display font-extrabold tracking-wide text-2xl
-                         text-transparent bg-clip-text bg-gradient-to-r from-gold via-white to-gold
+                         text-transparent bg-clip-text bg-linear-to-r from-gold via-white to-gold
                          animate-shimmer opacity-80 pointer-events-none"
               aria-hidden="true"
             >
@@ -39,7 +39,7 @@ export default function Navbar() {
             {/* Neon underline with shimmer */}
             <span
               className="absolute left-0 -bottom-1 w-full h-0.5 rounded-full
-                         bg-gradient-to-r from-gold via-white to-gold
+                         bg-linear-to-r from-gold via-white to-gold
                          shadow-[0_0_8px_rgba(198,161,91,0.7)]
                          animate-shimmer"
             />

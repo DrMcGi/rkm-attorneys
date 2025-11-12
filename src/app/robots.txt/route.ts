@@ -1,8 +1,6 @@
-import type { NextRequest } from "next/server";
-
 export const dynamic = "force-static";
 
-export function GET(_req: NextRequest) {
+export function GET() {
   const body = `
 User-agent: *
 Allow: /

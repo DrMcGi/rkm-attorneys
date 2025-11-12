@@ -1,8 +1,13 @@
 "use client";
 
+import type { MouseEvent } from "react";
 import { FaWhatsapp, FaFacebookF, FaLinkedinIn, FaTwitter } from "react-icons/fa";
 
 export default function Footer() {
+  const handlePlaceholderClick = (event: MouseEvent<HTMLAnchorElement>) => {
+    event.preventDefault();
+  };
+
   return (
     <footer className="bg-onyx text-bone border-t border-gold/30 relative z-10">
       <div className="container py-12 grid grid-cols-1 md:grid-cols-3 gap-10">
@@ -59,18 +64,27 @@ export default function Footer() {
             </a>
             <a
               href="#"
+              onClick={handlePlaceholderClick}
+              aria-disabled="true"
+              tabIndex={-1}
               className="p-3 rounded-full bg-glass text-gold shadow-soft hover:shadow-glow transition"
             >
               <FaFacebookF />
             </a>
             <a
               href="#"
+              onClick={handlePlaceholderClick}
+              aria-disabled="true"
+              tabIndex={-1}
               className="p-3 rounded-full bg-glass text-gold shadow-soft hover:shadow-glow transition"
             >
               <FaLinkedinIn />
             </a>
             <a
               href="#"
+              onClick={handlePlaceholderClick}
+              aria-disabled="true"
+              tabIndex={-1}
               className="p-3 rounded-full bg-glass text-gold shadow-soft hover:shadow-glow transition"
             >
               <FaTwitter />

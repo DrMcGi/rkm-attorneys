@@ -1,13 +1,15 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import Image from "next/image";
 
 export default function Hero() {
   const ref = useRef(null);
+  const prefersReducedMotion = useReducedMotion();
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
+  const parallaxStyle = prefersReducedMotion ? undefined : { y };
 
   return (
     <section
@@ -15,7 +17,7 @@ export default function Hero() {
       className="relative flex items-center justify-center h-screen overflow-hidden"
     >
       {/* Parallax background with alt text */}
-      <motion.div style={{ y }} className="absolute inset-0">
+  <motion.div style={parallaxStyle} className="absolute inset-0">
         <Image
           src="/images/hero-bg.jpg"
           alt="RKM Attorneys office reception in Johannesburg"

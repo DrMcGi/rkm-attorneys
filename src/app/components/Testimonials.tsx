@@ -1,10 +1,11 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 
 export default function Testimonials() {
   const ref = useRef(null);
+  const prefersReducedMotion = useReducedMotion();
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start end", "end start"]
@@ -22,9 +23,12 @@ export default function Testimonials() {
   return (
     <section id="testimonials" ref={ref} className="container py-24">
       <h2 className="font-display text-3xl text-center text-bone drop-shadow-[0_0_15px_rgba(255,215,0,0.6)]">
-        Testimonials
+        Testimonials – What Our Clients Say
       </h2>
-      <motion.div style={{ y }} className="mt-12 grid md:grid-cols-3 gap-8">
+      <motion.div
+        style={prefersReducedMotion ? undefined : { y }}
+        className="mt-12 grid md:grid-cols-3 gap-8"
+      >
         {quotes.map((q) => (
           <blockquote
             key={q.author}

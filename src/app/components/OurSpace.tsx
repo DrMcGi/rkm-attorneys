@@ -1,13 +1,14 @@
 "use client";
 
 import { useState, useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import { FaTimes } from "react-icons/fa";
 
 export default function OurSpace() {
   const [lightbox, setLightbox] = useState<string | null>(null);
   const ref = useRef(null);
+  const prefersReducedMotion = useReducedMotion();
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
 
   // Parallax transforms for images
@@ -24,7 +25,7 @@ export default function OurSpace() {
       </p>
       <div className="mt-12 grid md:grid-cols-2 gap-8">
         <motion.figure
-          style={{ y: y1 }}
+          style={prefersReducedMotion ? undefined : { y: y1 }}
           className="overflow-hidden rounded-xl shadow-[0_0_20px_rgba(255,215,0,0.15)] border border-gold/30 cursor-pointer"
           onClick={() => setLightbox("/images/office-table.jpg")}
         >
@@ -41,7 +42,7 @@ export default function OurSpace() {
         </motion.figure>
 
         <motion.figure
-          style={{ y: y2 }}
+          style={prefersReducedMotion ? undefined : { y: y2 }}
           className="overflow-hidden rounded-xl shadow-[0_0_20px_rgba(255,215,0,0.15)] border border-gold/30 cursor-pointer"
           onClick={() => setLightbox("/images/reception.jpg")}
         >
