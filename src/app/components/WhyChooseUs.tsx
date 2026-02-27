@@ -1,3 +1,5 @@
+"use client";
+
 import { FaBalanceScale, FaUserShield, FaHandshake, FaCrown } from "react-icons/fa";
 
 export default function WhyChooseUs() {
@@ -27,7 +29,7 @@ export default function WhyChooseUs() {
   return (
     <section id="why" className="container py-24">
       <h2 className="font-display text-3xl text-center text-bone drop-shadow-[0_0_15px_rgba(255,215,0,0.6)]">
-        Why Choose Us
+        Why Choose Us – Trusted Attorneys in Gauteng
       </h2>
       <div className="mt-12 grid md:grid-cols-4 gap-8">
         {pillars.map((p) => (

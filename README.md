@@ -29,6 +29,17 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
+## Authors & Ownership
+
+This project was developed by **DrMcGi's SaaS Atelier (Pty) Ltd.**
+
+- **Founder & MD:** Gift Rantho
+- **Contact:** 064 921 1745 (calls & WhatsApp)
+- **Email:** Giftk.rantho@gmail.com
+- **Website:** [www.drmcgi.co.za](https://www.drmcgi.co.za)
+
+Authorship is also documented in source files and the `AUTHORS.md` file.
+
 ## Deploy on Vercel
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.

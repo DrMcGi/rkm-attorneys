@@ -1,5 +1,19 @@
 "use client";
 
+/*
+ * Created by DrMcGi's SaaS Atelier (Pty) Ltd.
+ * Author: Gift Rantho, Founder and MD
+ * Contact: 0649211745 (call/WhatsApp)
+ * Website: www.drmcgi.co.za
+ */
+
+/*
+ * Created by DrMcGi's SaaS Atelier (Pty) Ltd.
+ * Author: Gift Rantho, Founder and MD
+ * Contact: 0649211745 (call/WhatsApp)
+ * Website: www.drmcgi.co.za
+ */
+
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { FaGavel, FaUniversity, FaCertificate } from "react-icons/fa";

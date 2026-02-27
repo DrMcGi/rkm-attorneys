@@ -1,5 +1,12 @@
 "use client";
 
+/*
+ * Created by DrMcGi's SaaS Atelier (Pty) Ltd.
+ * Author: Gift Rantho, Founder and MD
+ * Contact: 0649211745 (call/WhatsApp)
+ * Website: www.drmcgi.co.za
+ */
+
 import { useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
@@ -17,7 +24,7 @@ export default function InsightsCarousel() {
   return (
     <section id="insights" className="container py-24 text-center">
       <h2 className="font-display text-3xl text-bone drop-shadow-[0_0_15px_rgba(255,215,0,0.6)]">
-        Insights
+        Insights – Legal Updates & Guidance
       </h2>
       <div className="relative mt-12 max-w-2xl mx-auto">
         <div

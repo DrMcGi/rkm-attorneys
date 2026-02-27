@@ -1,5 +1,12 @@
 "use client";
 
+/*
+ * Created by DrMcGi's SaaS Atelier (Pty) Ltd.
+ * Author: Gift Rantho, Founder and MD
+ * Contact: 0649211745 (call/WhatsApp)
+ * Website: www.drmcgi.co.za
+ */
+
 import { FaCrown } from "react-icons/fa";
 import { useState } from "react";
 
